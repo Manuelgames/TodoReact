@@ -1,0 +1,42 @@
+.icon:hover {
+    cursor: pointer;
+}
+
+.Icon-check--active {
+    color: #11de18;
+}
+
+.delete-task:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.container--items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(100% - 10px);
+    min-height: 150px;
+    max-height: 300px;
+    height: auto;
+    margin: 5px 0;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.TodoItem-p {
+    display: flex;
+    justify-content: center;
+    width: calc(50% - 10px);
+    min-width: 140px;
+    height: auto;
+    padding: 10px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: justify;
+}
+
+.TodoItem-p--active {
+    text-decoration: line-through red;
+}
