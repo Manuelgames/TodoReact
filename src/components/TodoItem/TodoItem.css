@@ -1,6 +1,7 @@
-.icon:hover {
+.Icon-check:hover{
     cursor: pointer;
 }
+
 
 .Icon-check--active {
     color: #11de18;

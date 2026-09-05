@@ -10,6 +10,7 @@ import DesignServicesRoundedIcon from '@mui/icons-material/DesignServicesRounded
 import Typography from '@mui/material/Typography';
 import { useState } from 'react'
 
+
 const defaultsTodos = [
   { id: 1, text: 'Cortar Cebolla', completed: false },
   { id: 2, text: 'Estudiar', completed: false },
@@ -23,14 +24,22 @@ const defaultsTodos = [
 function App() {
   const [todos, setTodos] = useState(defaultsTodos);
   const [searchValue, setSearchValue] = useState('');
+
+
+  //obtiene todos los valores del arreglo 'todos', de manera que los filtra para ver si son verdaderos (true), sin embargo obtiene el valor en forma de array, por lo que aplicamos .length para tener solo la magnitud de posiciones, asi como tambien con la doble negacion forzamos en caso de que los valores sean de otro tipo de dato a que se conviertan en booleanos.
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  const completarTodo = (id) => {
+    setTodos((todosActuales) =>
+      todosActuales.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      ));
+  };
   const eliminarTodo = (id) => {
     setTodos((todosActuales) =>
       todosActuales.filter((todo) => todo.id !== id)
     );
   };
-  //obtiene todos los valores del arreglo 'todos', de manera que los filtra para ver si son verdaderos (true), sin embargo obtiene el valor en forma de array, por lo que aplicamos .length para tener solo la magnitud de posiciones, asi como tambien con la doble negacion forzamos en caso de que los valores sean de otro tipo de dato a que se conviertan en booleanos.
-  const completedTodos = todos.filter(todo => !!todo.completed).length;
-  const totalTodos = todos.length;
 
   return (
     <main>
@@ -107,6 +116,7 @@ function App() {
               todos.filter((todo) =>
                 todo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())).map((todo) => (
                   <TodoItem
+                    onCompleted={completarTodo}
                     onDelete={eliminarTodo}
                     key={todo.id}
                     id={todo.id}
