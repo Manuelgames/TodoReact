@@ -14,7 +14,6 @@ function TodoSearch( { searchValue, setSearchValue, sx }) {
       value={searchValue ?? ''}
       sx={sx}
       onChange={(event) => {
-        console.log(event.target.value);
         setSearchValue(event.target.value);
       }}
       slotProps={{

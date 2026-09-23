@@ -1,12 +1,13 @@
 import React from "react";
-import { TodoIcon } from '../TodoIcon';
+import { TodoIcon } from '../TodoIcon/TodoIcon';
 
 
-function CheckComponent () {
+function CheckComponent({ onClick, className }) {
     return (
         <TodoIcon
             type='check'
-            color= 'red'
+            onClick={onClick}
+            className={className}
         ></TodoIcon>
     )
 }

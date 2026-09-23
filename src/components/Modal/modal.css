@@ -1,0 +1,14 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 1.4rem;
+}
+
+.content-text{
+    margin-top: 100px;
+}

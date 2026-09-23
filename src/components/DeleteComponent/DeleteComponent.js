@@ -1,13 +1,14 @@
-import React from "react";
-import { TodoIcon } from '../TodoIcon'
+import { TodoIcon } from '../TodoIcon/TodoIcon'
+// Componente para las acciones del icono delete en las tareas generadas
 
-
-function DeleteComponent() {
-    <TodoIcon
-        type='check'
-        color='gray'
-    ></TodoIcon>
-    return
+function DeleteComponent({onClick, className}) {
+    return (
+        <TodoIcon
+            type='delete'
+            onClick = {onClick}
+            className = {className}
+        ></TodoIcon>
+    )
 }
 
 

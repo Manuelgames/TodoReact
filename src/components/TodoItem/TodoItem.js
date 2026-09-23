@@ -1,15 +1,14 @@
 import './TodoItem.css'
-import {CheckComponent} from '../CheckComponent/CheckComponent';
+import { CheckComponent } from '../CheckComponent/CheckComponent';
+import { DeleteComponent } from '../DeleteComponent/DeleteComponent';
 
 function TodoItem({ id, completed, text, tareaContador, onCompleted, onDelete }) {
     return (
         <li className='container--items'>
-            {/* pregunta que de los valores de props en completed, los que sean true, se les va asignar tambien una clase --active la cual generara que cambie de color a verde de que se completo */}
-            {/* <span className={`Icon Icon-check ${completed && 'Icon-check--active'}`} onClick={() => {
-                onCompleted(id)
-            }}>V</span> */}
-
-            <CheckComponent />
+            <CheckComponent
+                onClick={() => onCompleted(id)}
+                className={completed ? 'Icon-check--active' : 'Icon-check--inactive'}
+            />
             <p>Tarea {tareaContador}</p>
             <p sx={{
                 width: {
@@ -18,9 +17,10 @@ function TodoItem({ id, completed, text, tareaContador, onCompleted, onDelete })
                 }
 
             }} className={`TodoItem-p ${completed && 'TodoItem-p--active'}`}>{text}</p>
-            <span className='delete-task' onClick={() => {
-                onDelete(id)
-            }}>X</span>
+            <DeleteComponent
+                className='delete-task'
+                onClick={() => onDelete(id)}
+            />
         </li>
     );
 }

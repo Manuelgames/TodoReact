@@ -1,15 +1,20 @@
-.Icon-check:hover{
+.Icon-check:hover {
     cursor: pointer;
+    color: var(--color-principal);
 }
-
-
 .Icon-check--active {
-    color: #11de18;
+    color: var(--color-principal);
 }
 
+.Icon-check--inactive {
+    color: var(--color-muted);
+}
+.delete-task{
+    color: var(--color-muted);
+}
 .delete-task:hover {
     cursor: pointer;
-    color: red;
+    color: var(--color-danger);
 }
 
 .container--items {
@@ -21,9 +26,25 @@
     max-height: 300px;
     height: auto;
     margin: 5px 0;
-    background-color: aliceblue;
-    border: 1px solid black;
+    color: var(--color-terceario);
+    background-color: rgba(219, 234, 255, 0.055);
+    border: 1px solid rgba(201, 223, 246, 0.13);
     border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.container--items:hover {
+    background-color: rgba(219, 234, 255, 0.095);
+    border-color: rgba(140, 230, 207, 0.3);
+}
+
+.container--items > p:not(.TodoItem-p) {
+    color: var(--color-secundario);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .TodoItem-p {
@@ -36,8 +57,19 @@
     overflow-wrap: break-word;
     word-break: break-word;
     text-align: justify;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .TodoItem-p--active {
-    text-decoration: line-through red;
+    color: var(--color-muted);
+    text-decoration: line-through rgba(140, 230, 207, 0.65);
+    text-decoration-thickness: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container--items {
+        transition: none;
+    }
 }

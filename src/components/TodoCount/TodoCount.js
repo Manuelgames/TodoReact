@@ -1,12 +1,15 @@
 import './TodoCount.css';
+import { useContext } from 'react';
+import { AppContext } from '../../context';
 
-function TodoCount({ total, completed }) {
+function TodoCount() {
+  const {totalTodos, completedTodos} = useContext(AppContext);
 
   return (
     <h1 onChange={(event) =>
-      completed === total ? event.target.value = 'Felicidades has completado tus tareas' : event.target.value = `Tareas completadas ${completed} de ${total}`
+      completedTodos === totalTodos ? event.target.value = 'Felicidades has completado tus tareas' : event.target.value = `Tareas completadas ${completedTodos} de ${totalTodos}`
     }>
-      Tareas completadas {completed} de {total}
+      Tareas completadas {completedTodos} de {totalTodos}
     </h1>
   );
 }

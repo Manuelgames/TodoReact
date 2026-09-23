@@ -1,0 +1,132 @@
+:root {
+    --color-principal: #8ce6cf;
+    --color-secundario: #b7c5d8;
+    --color-terceario: #edf4ff;
+    --color-muted: #a1b1c8;
+    --color-danger: #ff9cac;
+    --font-interface: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color-scheme: dark;
+    font-family: var(--font-interface);
+    color: var(--color-terceario);
+    background-color: #101827;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #101827;
+    background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(57, 145, 140, 0.25), transparent 55%),
+        radial-gradient(ellipse at 85% 80%, rgba(102, 91, 165, 0.24), transparent 55%),
+        linear-gradient(135deg, #101c2b, #151a2d);
+}
+
+::selection {
+    color: #101c2b;
+    background: var(--color-principal);
+}
+
+main .MuiCard-root {
+    color: var(--color-terceario);
+    background-color: rgba(29, 43, 62, 0.72);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(201, 223, 246, 0.18);
+    box-shadow: 0 24px 70px rgba(3, 9, 20, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+main .MuiTypography-root,
+main .MuiInputBase-root,
+main .MuiInputLabel-root,
+main .MuiButton-root {
+    font-family: var(--font-interface);
+}
+
+main .MuiTypography-root {
+    color: var(--color-secundario);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+main .MuiCardContent-root>.MuiSvgIcon-root {
+    color: var(--color-principal);
+}
+
+main .MuiOutlinedInput-root {
+    color: var(--color-terceario);
+    background-color: rgba(9, 20, 35, 0.34);
+    transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+main .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(185, 207, 233, 0.3);
+}
+
+main .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(140, 230, 207, 0.65);
+}
+
+main .MuiOutlinedInput-root.Mui-focused {
+    background-color: rgba(9, 20, 35, 0.52);
+    box-shadow: 0 0 0 3px rgba(140, 230, 207, 0.12);
+}
+
+main .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--color-principal);
+}
+
+main .MuiInputLabel-root,
+main .MuiInputAdornment-root {
+    color: var(--color-secundario);
+}
+
+main .MuiInputLabel-root.Mui-focused {
+    color: var(--color-principal);
+}
+
+main .MuiInputBase-input::placeholder {
+    color: var(--color-muted);
+    opacity: 1;
+}
+
+main .MuiButton-root {
+    color: #102b2a;
+    background-color: var(--color-principal);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent);
+    border: 1px solid rgba(189, 255, 234, 0.55);
+    box-shadow: 0 4px 18px rgba(67, 190, 159, 0.16);
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-transform: none;
+    transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+main .MuiButton-root:hover {
+    background-color: #b1f2df;
+    box-shadow: 0 6px 24px rgba(67, 190, 159, 0.25);
+}
+
+main .MuiButton-root:focus-visible {
+    outline: 2px solid var(--color-terceario);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    main .MuiOutlinedInput-root,
+    main .MuiButton-root {
+        transition: none;
+    }
+}
